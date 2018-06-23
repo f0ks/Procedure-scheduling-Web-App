@@ -55,11 +55,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
 
     // Find Study and update it with the request body
-    Study.findByIdAndUpdate(req.params.studyId, {
-        name: req.body.name,
-        sex: req.body.sex,
-        birthday: req.body.birthday
-    }, {new: true})
+    Study.findByIdAndUpdate(req.params.studyId, req.body, {new: true})
         .then(study => {
             if (!study) {
                 return res.status(404).send({

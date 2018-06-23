@@ -55,11 +55,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
 
     // Find Patient and update it with the request body
-    Patient.findByIdAndUpdate(req.params.patientId, {
-        name: req.body.name,
-        sex: req.body.sex,
-        birthday: req.body.birthday
-    }, {new: true})
+    Patient.findByIdAndUpdate(req.params.patientId, req.body, {new: true})
         .then(patient => {
             if (!patient) {
                 return res.status(404).send({
