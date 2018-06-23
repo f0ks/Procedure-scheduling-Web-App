@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to Procedure scheduling Web App"});
 });
 
-// Require Patients routes
 require('./app/routes/patient.routes.js')(app);
+require('./app/routes/study.route')(app);
 
 // listen for requests
 app.listen(8080, () => {
