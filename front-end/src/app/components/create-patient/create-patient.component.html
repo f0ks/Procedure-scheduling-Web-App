@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="patientForm" novalidate>
+
+      <div class="form-group">
+
+        <label class="col-md-4">Patient's name</label>
+
+        <input
+          type="text"
+          class="form-control"
+          name="patient_name"
+          formControlName="patient_name"
+        />
+
+        <!-- validation message -->
+        <div
+          *ngIf="patientForm.controls['patient_name'].invalid && (patientForm.controls['patient_name'].dirty || patientForm.controls['patient_name'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="patientForm.controls['patient_name'].errors.required">
+            Unit Name is required.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------ -->
+
+      <div class="form-group">
+
+        <label class="col-md-4">Sex</label>
+
+        <input
+          type="text"
+          class="form-control"
+          name="patient_sex"
+          formControlName="patient_sex"
+        />
+
+        <!-- validation message -->
+        <div
+          *ngIf="patientForm.controls['patient_sex'].invalid && (patientForm.controls['patient_sex'].dirty || patientForm.controls['patient_sex'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="patientForm.controls['patient_sex'].errors.required">
+            Unit Name is required.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------ -->
+
+
+      <div class="form-group">
+
+        <label class="col-md-4">Day of Birth </label>
+
+        <input
+          type="text"
+          class="form-control"
+          name="patient_birthday"
+          formControlName="patient_birthday"
+        />
+
+        <!-- validation message -->
+        <div
+          *ngIf="patientForm.controls['patient_birthday'].invalid && (patientForm.controls['patient_birthday'].dirty || patientForm.controls['patient_birthday'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="patientForm.controls['patient_birthday'].errors.required">
+            Unit Name is required.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------ -->
+
+
+      <div class="form-group">
+
+        <button
+          (click)="addPatient(patientForm.controls.patient_name.value, patientForm.controls.patient_sex.value, patientForm.controls.patient_birthday.value )"
+          [disabled]="patientForm.pristine || patientForm.invalid"
+          class="btn btn-primary">Add patient
+        </button>
+
+      </div>
+
+    </form>
+  </div>
+</div>
