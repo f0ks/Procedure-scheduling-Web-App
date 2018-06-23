@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {SlimLoadingBarModule} from "ng2-slim-loading-bar";
+import { PatientsComponent } from './components/patients/patients.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'create-procedure',
     component: CreateProcedureComponent
+  },
+  {
+    path: 'patients',
+    component: PatientsComponent
   },
   {
     path: 'edit-procedure/:id',
@@ -39,7 +44,8 @@ const routes: Routes = [
     CreatePatientComponent,
     IndexComponent,
     CreateProcedureComponent,
-    UpdateProcedureComponent
+    UpdateProcedureComponent,
+    PatientsComponent
   ],
 
   imports: [

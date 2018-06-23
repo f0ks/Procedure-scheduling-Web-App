@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Patients} from "./Patients";
-import {ProcedureService} from "../../procedure.service";
 
 @Component({
   selector: 'app-index',
@@ -9,17 +7,13 @@ import {ProcedureService} from "../../procedure.service";
 })
 export class IndexComponent implements OnInit {
 
-  patients: Patients[];
 
-  constructor(private procedureservice: ProcedureService) {
+
+  constructor() {
   }
 
   ngOnInit() {
-    this.procedureservice
-      .getPatients()
-      .subscribe((data: Patients[]) => {
-        this.patients = data;
-      });
+
   }
 
 }

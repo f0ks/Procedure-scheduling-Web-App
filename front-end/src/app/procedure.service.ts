@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {b} from "@angular/core/src/render3";
-import { Patients } from './components/index/Patients';
+import { Patients } from './components/patients/Patients';
 
 @Injectable({
   providedIn: 'root'
