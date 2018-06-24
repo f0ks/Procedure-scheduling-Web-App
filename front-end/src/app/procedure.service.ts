@@ -8,7 +8,7 @@ import { Patients } from './components/patients/Patients';
 })
 export class ProcedureService {
 
-  uri = 'http://localhost:8080';
+  uri = 'http://46.101.253.55:8080';
 
   constructor(private http: HttpClient) {
   }
