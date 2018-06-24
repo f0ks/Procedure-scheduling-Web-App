@@ -16,6 +16,10 @@ export class IndexComponent implements OnInit {
   constructor(private procedureservice: ProcedureService) {
   }
 
+  updateStatus(id, model) {
+    this.procedureservice.updateProcedure(id, model);
+  }
+
   getPatientNameById(id): String {
     let result = null;
     if (this.patients) {

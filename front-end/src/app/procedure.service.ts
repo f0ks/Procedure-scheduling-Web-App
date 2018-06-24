@@ -47,4 +47,9 @@ export class ProcedureService {
       .get(`${this.uri}/studies`);
   }
 
+  updateProcedure (id, model) {
+    this.http.put(`${this.uri}/studies/${id}`, model)
+      .subscribe(res => console.log('Done'));
+  }
+
 }

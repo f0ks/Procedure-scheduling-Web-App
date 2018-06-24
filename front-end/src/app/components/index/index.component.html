@@ -21,7 +21,9 @@
       <select
         class="form-control"
         name="status"
-        [(ngModel)]="procedure.status">
+        [(ngModel)]="procedure.status"
+        (change)="updateStatus(procedure._id, procedure)"
+      >
         <option *ngFor="let status of statuses" [ngValue]="status">{{ status }}</option>
       </select>
     </td>
