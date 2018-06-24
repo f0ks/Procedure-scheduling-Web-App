@@ -15,7 +15,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="patientForm.controls['patient_name'].invalid && (patientForm.controls['patient_name'].dirty || patientForm.controls['patient_name'].touched)"
+          *ngIf="patientForm.controls['patient_name'].invalid && (patientForm.controls['patient_name'].dirty ||
+            patientForm.controls['patient_name'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_name'].errors.required">
             Patient's name is required.
@@ -39,7 +40,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="patientForm.controls['patient_sex'].invalid && (patientForm.controls['patient_sex'].dirty || patientForm.controls['patient_sex'].touched)"
+          *ngIf="patientForm.controls['patient_sex'].invalid && (patientForm.controls['patient_sex'].dirty ||
+            patientForm.controls['patient_sex'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_sex'].errors.required">
             Sex is required.
@@ -64,7 +66,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="patientForm.controls['patient_birthday'].invalid && (patientForm.controls['patient_birthday'].dirty || patientForm.controls['patient_birthday'].touched)"
+          *ngIf="patientForm.controls['patient_birthday'].invalid &&
+            (patientForm.controls['patient_birthday'].dirty || patientForm.controls['patient_birthday'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_birthday'].errors.required">
             Day of Birth is required.
@@ -79,7 +82,9 @@
       <div class="form-group">
 
         <button
-          (click)="addPatient(patientForm.controls.patient_name.value, patientForm.controls.patient_sex.value, patientForm.controls.patient_birthday.value )"
+          (click)="addPatient(patientForm.controls.patient_name.value,
+          patientForm.controls.patient_sex.value,
+          patientForm.controls.patient_birthday.value )"
           [disabled]="patientForm.pristine || patientForm.invalid"
           class="btn btn-primary">Add patient
         </button>

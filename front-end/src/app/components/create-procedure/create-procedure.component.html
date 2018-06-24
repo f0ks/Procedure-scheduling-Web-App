@@ -15,7 +15,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="proceduresForm.controls['patient'].invalid && (proceduresForm.controls['patient'].dirty || proceduresForm.controls['patient'].touched)"
+          *ngIf="proceduresForm.controls['patient'].invalid && (proceduresForm.controls['patient'].dirty ||
+            proceduresForm.controls['patient'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['patient'].errors.required">
             Patient is required.
@@ -39,7 +40,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="proceduresForm.controls['description'].invalid && (proceduresForm.controls['description'].dirty || proceduresForm.controls['description'].touched)"
+          *ngIf="proceduresForm.controls['description'].invalid && (proceduresForm.controls['description'].dirty ||
+            proceduresForm.controls['description'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['description'].errors.required">
             Unit Name is required.
@@ -64,7 +66,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="proceduresForm.controls['status'].invalid && (proceduresForm.controls['status'].dirty || proceduresForm.controls['status'].touched)"
+          *ngIf="proceduresForm.controls['status'].invalid && (proceduresForm.controls['status'].dirty
+            || proceduresForm.controls['status'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['status'].errors.required">
             status is required.
@@ -89,7 +92,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="proceduresForm.controls['start_time'].invalid && (proceduresForm.controls['start_time'].dirty || proceduresForm.controls['start_time'].touched)"
+          *ngIf="proceduresForm.controls['start_time'].invalid && (proceduresForm.controls['start_time'].dirty
+            || proceduresForm.controls['start_time'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['start_time'].errors.required">
             status is required.
@@ -114,7 +118,8 @@
 
         <!-- validation message -->
         <div
-          *ngIf="proceduresForm.controls['end_time'].invalid && (proceduresForm.controls['end_time'].dirty || proceduresForm.controls['end_time'].touched)"
+          *ngIf="proceduresForm.controls['end_time'].invalid && (proceduresForm.controls['end_time'].dirty
+            || proceduresForm.controls['end_time'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['end_time'].errors.required">
             status is required.
@@ -129,7 +134,11 @@
       <div class="form-group">
 
         <button
-          (click)="addProcedure(proceduresForm.controls.patient.value, proceduresForm.controls.description.value, proceduresForm.controls.status.value, proceduresForm.controls.start_time.value, proceduresForm.controls.end_time.value)"
+          (click)="addProcedure(proceduresForm.controls.patient.value,
+          proceduresForm.controls.description.value,
+          proceduresForm.controls.status.value,
+          proceduresForm.controls.start_time.value,
+          proceduresForm.controls.end_time.value)"
 
           [disabled]="proceduresForm.pristine || proceduresForm.invalid"
           class="btn btn-primary">Add patient
