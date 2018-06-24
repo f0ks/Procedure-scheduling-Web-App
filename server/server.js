@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
 
 require('./app/routes/patient.routes.js')(app);
 require('./app/routes/study.route')(app);
+require('./app/routes/doctors.routes')(app);
 
 // listen for requests
 app.listen(8080, () => {
