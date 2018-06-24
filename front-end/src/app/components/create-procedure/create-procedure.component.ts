@@ -14,7 +14,7 @@ export class CreateProcedureComponent implements OnInit {
   proceduresForm: FormGroup;
   patients: Patients[];
   patient: String;
-
+  status: any[] = ['planned', 'in progress', 'finished'];
 
   constructor(private procedureservice: ProcedureService, private fb: FormBuilder) {
     this.createForm();

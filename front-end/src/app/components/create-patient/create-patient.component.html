@@ -31,13 +31,6 @@
 
         <label>Sex</label>
 
-<!--        <input
-          type="text"
-          class="form-control"
-          name="patient_sex"
-          formControlName="patient_sex"
-        />-->
-
         <select class="form-control" name="patient_sex"
                 formControlName="patient_sex">
           <option *ngFor="let s of sex" [ngValue]="s">{{ s }}</option>

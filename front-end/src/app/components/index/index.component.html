@@ -15,8 +15,8 @@
   <tr *ngFor="let procedure of procedures">
     <td>{{ getPatientNameById(procedure.patient) }}</td>
     <td class="description">{{ procedure.description }}</td>
-    <td>{{ procedure.startTime }}</td>
-    <td>{{ procedure.endTime }}</td>
+    <td>{{ procedure.startTime  | date:'dd MMM yyyy hh:mm'}}</td>
+    <td>{{ procedure.endTime  | date:'dd MMM yyyy hh:mm'}}</td>
     <td>
       <select
         class="form-control"

@@ -57,12 +57,10 @@
 
         <label>Status</label>
 
-        <input
-          type="text"
-          class="form-control"
-          name="status"
-          formControlName="status"
-        />
+        <select class="form-control" name="status"
+                formControlName="status">
+          <option *ngFor="let s of status" [ngValue]="s">{{ s }}</option>
+        </select>
 
         <!-- validation message -->
         <div
