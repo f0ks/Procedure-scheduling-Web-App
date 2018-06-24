@@ -29,4 +29,16 @@ export class ProcedureService {
       .get(`${this.uri}/patients`);
   }
 
+  addProcedure(patient, description, status, startTime, endTime) {
+    const obj = {
+      patient: patient,
+      description: description,
+      status: status,
+      startTime: startTime,
+      endTime: endTime
+    };
+    this.http.post(`${this.uri}/studies`, obj)
+      .subscribe(res => console.log('Done'));
+  }
+
 }

@@ -18,7 +18,7 @@
           *ngIf="patientForm.controls['patient_name'].invalid && (patientForm.controls['patient_name'].dirty || patientForm.controls['patient_name'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_name'].errors.required">
-            Unit Name is required.
+            Patient's name is required.
           </div>
         </div>
 
@@ -42,7 +42,7 @@
           *ngIf="patientForm.controls['patient_sex'].invalid && (patientForm.controls['patient_sex'].dirty || patientForm.controls['patient_sex'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_sex'].errors.required">
-            Unit Name is required.
+            Sex is required.
           </div>
         </div>
 
@@ -67,7 +67,7 @@
           *ngIf="patientForm.controls['patient_birthday'].invalid && (patientForm.controls['patient_birthday'].dirty || patientForm.controls['patient_birthday'].touched)"
           class="alert alert-danger">
           <div *ngIf="patientForm.controls['patient_birthday'].errors.required">
-            Unit Name is required.
+            Day of Birth is required.
           </div>
         </div>
 
