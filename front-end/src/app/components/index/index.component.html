@@ -1,20 +1,29 @@
-<!--<table class="table table-hover">-->
-  <!--<thead>-->
-  <!--<tr>-->
-    <!--<td>Name</td>-->
-    <!--<td>Sex</td>-->
-    <!--<td>Day of Birth </td>-->
+<table class="table table-hover">
 
-  <!--</tr>-->
-  <!--</thead>-->
+  <thead>
+  <tr>
+    <td>patient</td>
+    <td>description</td>
+    <td>startTime</td>
+    <td>endTime</td>
+    <td>Status</td>
 
-  <!--<tbody>-->
-  <!--<tr *ngFor="let patient of patients">-->
-    <!--<td>{{ patient.name }}</td>-->
-    <!--<td>{{ patient.sex }}</td>-->
-    <!--<td>{{ patient.birthday }}</td>-->
-  <!--</tr>-->
-  <!--</tbody>-->
-<!--</table>-->
+  </tr>
+  </thead>
 
-index
+  <tbody>
+  <tr *ngFor="let procedure of procedures">
+    <td>{{ procedure.patient }}</td>
+    <td>{{ procedure.description }}</td>
+    <td>{{ procedure.startTime }}</td>
+    <td>{{ procedure.endTime }}</td>
+    <td>
+      <select name="status"
+              [(ngModel)]="procedure.status">
+        <option *ngFor="let status of statuses" [ngValue]="status">{{ status }}</option>
+      </select>
+    </td>
+  </tr>
+  </tbody>
+
+</table>

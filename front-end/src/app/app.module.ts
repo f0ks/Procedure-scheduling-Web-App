@@ -7,13 +7,14 @@ import {IndexComponent} from './components/index/index.component';
 import {CreateProcedureComponent} from './components/create-procedure/create-procedure.component';
 import {UpdateProcedureComponent} from './components/update-procedure/update-procedure.component';
 import {ProcedureService} from "./procedure.service";
+import {FormsModule} from '@angular/forms';
 
 
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {SlimLoadingBarModule} from "ng2-slim-loading-bar";
-import { PatientsComponent } from './components/patients/patients.component';
+import {PatientsComponent} from './components/patients/patients.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     SlimLoadingBarModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
 

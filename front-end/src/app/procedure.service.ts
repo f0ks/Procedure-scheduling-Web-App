@@ -41,4 +41,10 @@ export class ProcedureService {
       .subscribe(res => console.log('Done'));
   }
 
+  getProcedures() {
+    return this
+      .http
+      .get(`${this.uri}/studies`);
+  }
+
 }

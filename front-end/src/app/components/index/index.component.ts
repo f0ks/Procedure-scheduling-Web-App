@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Procedures} from "./Procedures";
+import {ProcedureService} from "../../procedure.service";
 
 @Component({
   selector: 'app-index',
@@ -7,13 +9,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
+  statuses: any[] = ['planned', 'in progress', 'finished'];
+  procedures: Procedures[];
 
-
-  constructor() {
+  constructor(private procedureservice: ProcedureService) {
   }
 
   ngOnInit() {
-
+    this.procedureservice
+      .getProcedures()
+      .subscribe((data: Procedures[]) => {
+        this.procedures = data;
+      });
   }
-
 }
