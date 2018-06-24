@@ -10,6 +10,7 @@ import {ProcedureService} from "../../procedure.service";
 export class CreatePatientComponent implements OnInit {
 
   patientForm: FormGroup;
+  sex: any[] = ['male', 'female'];
 
   constructor(private procedureservice: ProcedureService, private fb: FormBuilder) {
     this.createForm();
@@ -25,6 +26,7 @@ export class CreatePatientComponent implements OnInit {
 
   addPatient(name, sex, birthday) {
     this.procedureservice.addPatient(name, sex, birthday);
+    window.location.href = '/patients';
   }
 
   ngOnInit() {

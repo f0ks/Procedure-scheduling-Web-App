@@ -4,7 +4,7 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">Patient's name</label>
+        <label>Patient's name</label>
 
         <input
           type="text"
@@ -29,14 +29,19 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">Sex</label>
+        <label>Sex</label>
 
-        <input
+<!--        <input
           type="text"
           class="form-control"
           name="patient_sex"
           formControlName="patient_sex"
-        />
+        />-->
+
+        <select class="form-control" name="patient_sex"
+                formControlName="patient_sex">
+          <option *ngFor="let s of sex" [ngValue]="s">{{ s }}</option>
+        </select>
 
         <!-- validation message -->
         <div
@@ -55,10 +60,10 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">Day of Birth </label>
+        <label>Day of Birth </label>
 
         <input
-          type="text"
+          type="date"
           class="form-control"
           name="patient_birthday"
           formControlName="patient_birthday"

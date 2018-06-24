@@ -4,10 +4,12 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">Patient</label>
+        <label>Patient</label>
 
-        <select name="patient"
-                formControlName="patient">
+        <select
+          class="form-control"
+          name="patient"
+          formControlName="patient">
           <option *ngFor="let p of patients" [ngValue]="p">{{ p.name }}</option>
         </select>
 
@@ -27,7 +29,7 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">Description</label>
+        <label>Description</label>
 
         <input
           type="text"
@@ -53,7 +55,7 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">status</label>
+        <label>Status</label>
 
         <input
           type="text"
@@ -79,10 +81,10 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">startTime</label>
+        <label>Planned Start time </label>
 
         <input
-          type="text"
+          type="date"
           class="form-control"
           name="start_time"
           formControlName="start_time"
@@ -105,10 +107,10 @@
 
       <div class="form-group">
 
-        <label class="col-md-4">endTime</label>
+        <label>Estimated End time (optional)</label>
 
         <input
-          type="text"
+          type="date"
           class="form-control"
           name="end_time"
           formControlName="end_time"
@@ -139,7 +141,7 @@
           proceduresForm.controls.end_time.value)"
 
           [disabled]="proceduresForm.pristine || proceduresForm.invalid"
-          class="btn btn-primary">Add patient
+          class="btn btn-primary">Schedule a procedure
         </button>
 
       </div>

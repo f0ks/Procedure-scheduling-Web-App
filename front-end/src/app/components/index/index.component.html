@@ -2,10 +2,10 @@
 
   <thead>
   <tr>
-    <td>patient</td>
-    <td>description</td>
-    <td>startTime</td>
-    <td>endTime</td>
+    <td>Patient</td>
+    <td>Description</td>
+    <td>Planned Start time </td>
+    <td>Estimated End time </td>
     <td>Status</td>
 
   </tr>
@@ -14,12 +14,14 @@
   <tbody>
   <tr *ngFor="let procedure of procedures">
     <td>{{ getPatientNameById(procedure.patient) }}</td>
-    <td>{{ procedure.description }}</td>
+    <td class="description">{{ procedure.description }}</td>
     <td>{{ procedure.startTime }}</td>
     <td>{{ procedure.endTime }}</td>
     <td>
-      <select name="status"
-              [(ngModel)]="procedure.status">
+      <select
+        class="form-control"
+        name="status"
+        [(ngModel)]="procedure.status">
         <option *ngFor="let status of statuses" [ngValue]="status">{{ status }}</option>
       </select>
     </td>

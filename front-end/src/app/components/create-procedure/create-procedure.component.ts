@@ -8,6 +8,7 @@ import {Patients} from "../patients/Patients";
   templateUrl: './create-procedure.component.html',
   styleUrls: ['./create-procedure.component.less']
 })
+
 export class CreateProcedureComponent implements OnInit {
 
   proceduresForm: FormGroup;
@@ -31,8 +32,8 @@ export class CreateProcedureComponent implements OnInit {
 
   addProcedure(patient, description, status, startTime, endTime) {
     this.procedureservice.addProcedure(patient, description, status, startTime, endTime);
+    window.location.href = '/index';
   }
-
 
   ngOnInit() {
 
