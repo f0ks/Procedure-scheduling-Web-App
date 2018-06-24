@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProcedureService} from "../../procedure.service";
+import {Patients} from "../patients/Patients";
 
 @Component({
   selector: 'app-create-procedure',
@@ -10,6 +11,8 @@ import {ProcedureService} from "../../procedure.service";
 export class CreateProcedureComponent implements OnInit {
 
   proceduresForm: FormGroup;
+  patients: Patients[];
+  patient: String;
 
 
   constructor(private procedureservice: ProcedureService, private fb: FormBuilder) {
@@ -32,6 +35,14 @@ export class CreateProcedureComponent implements OnInit {
 
 
   ngOnInit() {
+
+    // load patients list
+    this.procedureservice
+      .getPatients()
+      .subscribe((data: Patients[]) => {
+        this.patients = data;
+      });
+
   }
 
 }

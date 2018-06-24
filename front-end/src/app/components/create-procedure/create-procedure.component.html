@@ -6,12 +6,10 @@
 
         <label class="col-md-4">Patient</label>
 
-        <input
-          type="text"
-          class="form-control"
-          name="patient"
-          formControlName="patient"
-        />
+        <select name="patient"
+                formControlName="patient">
+          <option *ngFor="let p of patients" [ngValue]="p">{{ p.name }}</option>
+        </select>
 
         <!-- validation message -->
         <div

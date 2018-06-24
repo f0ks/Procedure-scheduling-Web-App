@@ -13,7 +13,7 @@
 
   <tbody>
   <tr *ngFor="let procedure of procedures">
-    <td>{{ procedure.patient }}</td>
+    <td>{{ getPatientNameById(procedure.patient) }}</td>
     <td>{{ procedure.description }}</td>
     <td>{{ procedure.startTime }}</td>
     <td>{{ procedure.endTime }}</td>
