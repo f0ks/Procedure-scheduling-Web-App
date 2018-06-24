@@ -17,6 +17,7 @@ import {SlimLoadingBarModule} from "ng2-slim-loading-bar";
 import {PatientsComponent} from './components/patients/patients.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/index', pathMatch: 'full'},
   {
     path: 'create-patient',
     component: CreatePatientComponent

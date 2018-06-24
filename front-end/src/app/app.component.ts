@@ -13,7 +13,6 @@ import { NavigationCancel,
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'app';
   constructor(private _loadingBar: SlimLoadingBarService, private _router: Router) {
     this._router.events.subscribe((event: Event) => {
       this.navigationInterceptor(event);
