@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {b} from "@angular/core/src/render3";
-import { Patients } from './components/patients/Patients';
+import {Patients} from './components/patients/Patients';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class ProcedureService {
       birthday: birthday
     };
     this.http.post(`${this.uri}/patients`, obj)
-      .subscribe(res => console.log('Done'));
+      .subscribe(res => window.location.href = '/patients');
   }
 
   getPatients() {
@@ -38,7 +38,7 @@ export class ProcedureService {
       endTime: endTime
     };
     this.http.post(`${this.uri}/studies`, obj)
-      .subscribe(res => console.log('Done'));
+      .subscribe(res => window.location.href = '/index');
   }
 
   getProcedures() {
@@ -47,7 +47,7 @@ export class ProcedureService {
       .get(`${this.uri}/studies`);
   }
 
-  updateProcedure (id, model) {
+  updateProcedure(id, model) {
     this.http.put(`${this.uri}/studies/${id}`, model)
       .subscribe(res => console.log('Done'));
   }

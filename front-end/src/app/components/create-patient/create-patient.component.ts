@@ -26,7 +26,6 @@ export class CreatePatientComponent implements OnInit {
 
   addPatient(name, sex, birthday) {
     this.procedureservice.addPatient(name, sex, birthday);
-    window.location.href = '/patients';
   }
 
   ngOnInit() {
