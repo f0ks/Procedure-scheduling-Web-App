@@ -12,6 +12,16 @@ const StudySchema = mongoose.Schema({
         required: true
     },
 
+    doctor: {
+        type: String,
+        required: true
+    },
+
+    room: {
+        type: String,
+        required: true
+    },
+
     status: {
         type: String,
         enum: ['planned', 'in progress', 'finished'],

@@ -27,14 +27,16 @@ export class CreateProcedureComponent implements OnInit {
     this.proceduresForm = this.fb.group({
       patient: ['', Validators.required],
       description: ['', Validators.required],
+      doctor: ['', Validators.required],
+      room: ['', Validators.required],
       status: ['', Validators.required],
       start_time: ['', Validators.required],
       end_time: ['']
     });
   }
 
-  addProcedure(patient, description, status, startTime, endTime) {
-    this.procedureservice.addProcedure(patient, description, status, startTime, endTime);
+  addProcedure(patient, description, doctor, room, status, startTime, endTime) {
+    this.procedureservice.addProcedure(patient, description,  doctor, room, status, startTime, endTime);
   }
 
   ngOnInit() {
