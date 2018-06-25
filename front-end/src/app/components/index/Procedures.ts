@@ -1,8 +1,10 @@
 export interface Procedures {
   _id: String;
-  patient: Date;
-  description: Date;
-  status: Date;
+  patient: String;
+  description: String;
+  doctor: String;
+  room: String;
+  status: String;
   startTime: Date;
   endTime: Date;
 }

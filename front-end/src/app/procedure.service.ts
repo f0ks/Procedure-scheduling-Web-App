@@ -29,10 +29,12 @@ export class ProcedureService {
       .get(`${this.uri}/patients`);
   }
 
-  addProcedure(patient, description, status, startTime, endTime) {
+  addProcedure(patient, description,  doctor, room, status, startTime, endTime) {
     const obj = {
       patient: patient,
       description: description,
+      doctor: doctor,
+      room: room,
       status: status,
       startTime: startTime,
       endTime: endTime
@@ -50,6 +52,18 @@ export class ProcedureService {
   updateProcedure(id, model) {
     this.http.put(`${this.uri}/studies/${id}`, model)
       .subscribe(res => console.log('Done'));
+  }
+
+  getRooms() {
+    return this
+      .http
+      .get(`${this.uri}/rooms`);
+  }
+
+  getDoctors() {
+    return this
+      .http
+      .get(`${this.uri}/doctors`);
   }
 
 }

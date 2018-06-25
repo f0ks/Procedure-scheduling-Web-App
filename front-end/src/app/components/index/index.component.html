@@ -4,6 +4,8 @@
   <tr>
     <td>Patient</td>
     <td>Description</td>
+    <td>Doctor</td>
+    <td>Room</td>
     <td>Planned Start time </td>
     <td>Estimated End time </td>
     <td>Status</td>
@@ -13,8 +15,10 @@
 
   <tbody>
   <tr *ngFor="let procedure of procedures">
-    <td>{{ getPatientNameById(procedure.patient) }}</td>
+    <td>{{ getNameById(procedure.patient, '_id', 'patients') }}</td>
     <td class="description">{{ procedure.description }}</td>
+    <td>{{ getNameById(procedure.doctor, 'id', 'doctors') }}</td>
+    <td>{{ getNameById(procedure.room, 'id', 'rooms') }}</td>
     <td>{{ procedure.startTime  | date:'dd MMM yyyy hh:mm'}}</td>
     <td>{{ procedure.endTime  | date:'dd MMM yyyy hh:mm'}}</td>
     <td>

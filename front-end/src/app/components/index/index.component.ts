@@ -13,6 +13,9 @@ export class IndexComponent implements OnInit {
   statuses: any[] = ['planned', 'in progress', 'finished'];
   procedures: Procedures[];
   patients: Patients[];
+  rooms: any[];
+  doctors: any[];
+
   constructor(private procedureservice: ProcedureService) {
   }
 
@@ -20,12 +23,12 @@ export class IndexComponent implements OnInit {
     this.procedureservice.updateProcedure(id, model);
   }
 
-  getPatientNameById(id): String {
+  getNameById(id, idField, where) {
     let result = null;
-    if (this.patients) {
-      this.patients.forEach((p) => {
-        if (p._id === id) {
-          result = p.name;
+    if (this[where]) {
+      this[where].forEach((item) => {
+        if (item[idField] === id) {
+          result = item.name;
         }
       });
     }
@@ -45,5 +48,20 @@ export class IndexComponent implements OnInit {
       .subscribe((data: Patients[]) => {
         this.patients = data;
       });
+
+    // load rooms
+    this.procedureservice
+      .getRooms()
+      .subscribe((data: Procedures[]) => {
+        this.rooms = data;
+      });
+
+    // load doctors
+    this.procedureservice
+      .getDoctors()
+      .subscribe((data: Patients[]) => {
+        this.doctors = data;
+      });
+
   }
 }

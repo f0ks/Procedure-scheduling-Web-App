@@ -55,6 +55,55 @@
 
       <div class="form-group">
 
+        <label>Doctor</label>
+
+        <select class="form-control" name="doctor"
+                formControlName="doctor">
+          <option *ngFor="let d of doctors" [ngValue]="d.id">{{ d.name }}</option>
+        </select>
+
+        <!-- validation message -->
+        <div
+          *ngIf="proceduresForm.controls['doctor'].invalid && (proceduresForm.controls['doctor'].dirty
+            || proceduresForm.controls['doctor'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="proceduresForm.controls['doctor'].errors.required">
+            Doctor is required.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------ -->
+
+
+      <div class="form-group">
+
+        <label>Room</label>
+
+        <select class="form-control" name="room"
+                formControlName="room">
+          <option *ngFor="let r of rooms" [ngValue]="r.id">{{ r.name }}</option>
+        </select>
+
+        <!-- validation message -->
+        <div
+          *ngIf="proceduresForm.controls['room'].invalid && (proceduresForm.controls['room'].dirty
+            || proceduresForm.controls['room'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="proceduresForm.controls['room'].errors.required">
+            Room is required.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ------------------------------------------------------------------------------------ -->
+
+
+      <div class="form-group">
+
         <label>Status</label>
 
         <select class="form-control" name="status"
@@ -68,7 +117,7 @@
             || proceduresForm.controls['status'].touched)"
           class="alert alert-danger">
           <div *ngIf="proceduresForm.controls['status'].errors.required">
-            status is required.
+            Status is required.
           </div>
         </div>
 
@@ -134,6 +183,8 @@
         <button
           (click)="addProcedure(proceduresForm.controls.patient.value,
           proceduresForm.controls.description.value,
+          proceduresForm.controls.doctor.value,
+          proceduresForm.controls.room.value,
           proceduresForm.controls.status.value,
           proceduresForm.controls.start_time.value,
           proceduresForm.controls.end_time.value)"
