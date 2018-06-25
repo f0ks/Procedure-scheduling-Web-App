@@ -32,7 +32,6 @@ export class CreateProcedureComponent implements OnInit {
 
   addProcedure(patient, description, status, startTime, endTime) {
     this.procedureservice.addProcedure(patient, description, status, startTime, endTime);
-    window.location.href = '/index';
   }
 
   ngOnInit() {
