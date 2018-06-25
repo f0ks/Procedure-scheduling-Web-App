@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProcedureService} from "../../procedure.service";
 import {Patients} from "../patients/Patients";
+import {Procedures} from "../index/Procedures";
 
 @Component({
   selector: 'app-create-procedure',
@@ -14,6 +15,8 @@ export class CreateProcedureComponent implements OnInit {
   proceduresForm: FormGroup;
   patients: Patients[];
   patient: String;
+  rooms: any[];
+  doctors: any[];
   status: any[] = ['planned', 'in progress', 'finished'];
 
   constructor(private procedureservice: ProcedureService, private fb: FormBuilder) {
@@ -41,6 +44,20 @@ export class CreateProcedureComponent implements OnInit {
       .getPatients()
       .subscribe((data: Patients[]) => {
         this.patients = data;
+      });
+
+    // load rooms
+    this.procedureservice
+      .getRooms()
+      .subscribe((data: Procedures[]) => {
+        this.rooms = data;
+      });
+
+    // load doctors
+    this.procedureservice
+      .getDoctors()
+      .subscribe((data: Patients[]) => {
+        this.doctors = data;
       });
 
   }

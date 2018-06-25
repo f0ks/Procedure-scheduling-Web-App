@@ -52,4 +52,16 @@ export class ProcedureService {
       .subscribe(res => console.log('Done'));
   }
 
+  getRooms() {
+    return this
+      .http
+      .get(`${this.uri}/rooms`);
+  }
+
+  getDoctors() {
+    return this
+      .http
+      .get(`${this.uri}/doctors`);
+  }
+
 }
